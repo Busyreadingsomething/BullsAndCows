@@ -11,8 +11,8 @@
 
 using namespace std;
 
-void printIntro() {
-	// introduce the game
+// introduce the game
+void PrintIntro() {
 	constexpr int WORD_LENGTH = 9;
 	cout << "Welcome to Bulls and Cows, a fun word game.\n";
 	cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?\n";
@@ -20,15 +20,20 @@ void printIntro() {
 	return;
 }
 
-int main() {
-	printIntro();
-	// get a guess from the player
+// get a guess from the player
+string GetGuess() {
 	string Guess = "";
 	cout << "Enter your guess: ";
 	getline(cin, Guess);
 	
 	// repeat the guess back to the player
 	cout << "Your guess was: " << Guess << "\n";
+	return Guess;
+}
+
+int main() {
+	PrintIntro();
+	string Guess = GetGuess();
 	return 0;
 }
 
