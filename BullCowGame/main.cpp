@@ -11,6 +11,22 @@
 
 using namespace std;
 
+void PrintIntro();
+string GetGuessAndPrint();
+
+int main() {
+	PrintIntro();
+	
+	// loop for number of turns asking for a guess
+	constexpr int LIMIT = 5;
+	for (int count = 0; count < LIMIT; count += 1) {
+		string Guess = GetGuessAndPrint();
+		cout << endl;
+	}
+	
+	return 0;
+}
+
 // introduce the game
 void PrintIntro() {
 	constexpr int WORD_LENGTH = 9;
@@ -21,7 +37,7 @@ void PrintIntro() {
 }
 
 // get a guess from the player
-string GetGuess() {
+string GetGuessAndPrint() {
 	string Guess = "";
 	cout << "Enter your guess: ";
 	getline(cin, Guess);
@@ -29,14 +45,4 @@ string GetGuess() {
 	// repeat the guess back to the player
 	cout << "Your guess was: " << Guess << "\n";
 	return Guess;
-}
-
-int main() {
-	PrintIntro();
-	string Guess = GetGuess();
-	return 0;
-}
-
-int doubleMe(int num) {
-	return num * 2;
 }
