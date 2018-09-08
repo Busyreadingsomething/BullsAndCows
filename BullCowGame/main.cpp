@@ -13,22 +13,21 @@ using namespace std;
 
 void PrintIntro();
 string GetGuessAndPrint();
+void PlayGame();
 
-int main() {
+int main()
+{
 	PrintIntro();
 	
 	// loop for number of turns asking for a guess
-	constexpr int LIMIT = 5;
-	for (int count = 0; count < LIMIT; count += 1) {
-		string Guess = GetGuessAndPrint();
-		cout << endl;
-	}
+	PlayGame();
 	
 	return 0;
 }
 
 // introduce the game
-void PrintIntro() {
+void PrintIntro()
+{
 	constexpr int WORD_LENGTH = 9;
 	cout << "Welcome to Bulls and Cows, a fun word game.\n";
 	cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?\n";
@@ -37,7 +36,8 @@ void PrintIntro() {
 }
 
 // get a guess from the player
-string GetGuessAndPrint() {
+string GetGuessAndPrint()
+{
 	string Guess = "";
 	cout << "Enter your guess: ";
 	getline(cin, Guess);
@@ -45,4 +45,13 @@ string GetGuessAndPrint() {
 	// repeat the guess back to the player
 	cout << "Your guess was: " << Guess << "\n";
 	return Guess;
+}
+
+void PlayGame()
+{
+	constexpr int LIMIT = 5;
+	for (int count = 0; count < LIMIT; count += 1) {
+		string Guess = GetGuessAndPrint();
+		cout << endl;
+	}
 }
