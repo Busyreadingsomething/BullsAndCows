@@ -57,6 +57,7 @@ std::string GetGuess()
 // loop through each turn asking for a guess
 void PlayGame()
 {
+	BCGame.Reset();
 	int MaxTries = BCGame.GetMaxTries();
 	
 	for (int count = 0; count < MaxTries; count += 1) {
