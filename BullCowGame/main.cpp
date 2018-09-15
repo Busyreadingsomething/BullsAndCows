@@ -8,6 +8,7 @@
 
 #include <iostream>
 #include <string>
+#include "FBullCowGame.hpp"
 
 void PrintIntro();
 void PlayGame();
@@ -53,6 +54,8 @@ std::string GetGuess()
 // loop through each turn asking for a guess
 void PlayGame()
 {
+	FBullCowGame BCGame; // instantiante a new game
+	
 	constexpr int LIMIT = 5;
 	for (int count = 0; count < LIMIT; count += 1) {
 		std::string Guess = GetGuess();
