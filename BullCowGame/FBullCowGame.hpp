@@ -18,7 +18,8 @@ public:
     int GetCurrentTry();
     bool IsGameWon();
     bool CheckGuessValidity(string); // TODO make a more rich return value.
-
+    int GetBulls();
+    int GetCows();
 
 
 // PLEASE TRY AND IGNORE THIS AND FOCUS ON THE INTERFACE ABOVE ^^
