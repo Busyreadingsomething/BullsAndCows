@@ -22,9 +22,10 @@ public:
     
     void Reset(); // TODO make a more rich return value.
     bool CheckGuessValidity(std::string); // TODO make a more rich return value.
+    // provide a method for counting the bulls and cows and incrementing the try number
 
 
-// PLEASE TRY AND IGNORE THIS AND FOCUS ON THE INTERFACE ABOVE ^^
+// ^^ PLEASE TRY AND IGNORE THIS AND FOCUS ON THE INTERFACE ABOVE ^^
 private:
     // see constructor for initialization
     int MyCurrentTry;

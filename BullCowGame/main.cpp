@@ -60,11 +60,17 @@ void PlayGame()
 	BCGame.Reset();
 	int MaxTries = BCGame.GetMaxTries();
 	
+	// TODO change the for to while loop
 	for (int count = 0; count < MaxTries; count += 1) {
-		std::string Guess = GetGuess();
+		std::string Guess = GetGuess(); // TODO Make loop checking valid guesses
+		
+		// Submit valid guess to the game
+		// Print number of bulls and cows
 		std::cout << "Your guess was: " << Guess << "\n";
 		std::cout << std::endl;
 	}
+	
+	// TODO summarise the game
 }
 
 bool AskToPlayAgain()
