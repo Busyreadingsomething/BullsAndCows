@@ -6,11 +6,17 @@
 //  Copyright © 2018 Makan Azarshahy. All rights reserved.
 //
 
+/* This is the console executable that makes use of the BullCow class
+ This acts as the View in the MVC pattern, and is responsible for all
+ user interaction. For game logic, see the FBullCowGame class.
+*/
+
 #include <iostream>
 #include <string>
 #include "FBullCowGame.hpp"
 
 using FText = std::string;
+using int32 = int;
 
 void PrintIntro();
 void PlayGame();
@@ -37,7 +43,7 @@ int main()
 // introduce the game
 void PrintIntro()
 {
-	constexpr int WORD_LENGTH = 9;
+	constexpr int32 WORD_LENGTH = 9;
 	std::cout << "Welcome to Bulls and Cows, a fun word game.\n";
 	std::cout << "Can you guess the " << WORD_LENGTH << " letter isogram I'm thinking of?\n";
 	std::cout << std::endl;
@@ -47,7 +53,7 @@ void PrintIntro()
 // get a guess from the player
 FText GetGuess()
 {
-	int CurrentTry = BCGame.GetCurrentTry();
+	int32 CurrentTry = BCGame.GetCurrentTry();
 	
 	FText Guess = "";
 	std::cout << "Try " << CurrentTry << ". Enter your guess: ";
@@ -60,10 +66,10 @@ FText GetGuess()
 void PlayGame()
 {
 	BCGame.Reset();
-	int MaxTries = BCGame.GetMaxTries();
+	int32 MaxTries = BCGame.GetMaxTries();
 	
 	// TODO change the for to while loop once we are validating tries
-	for (int count = 0; count < MaxTries; count += 1) {
+	for (int32 count = 0; count < MaxTries; count += 1) {
 		FText Guess = GetGuess(); // TODO make loop checking valid guesses
 		
 		// submit valid guess to the game
