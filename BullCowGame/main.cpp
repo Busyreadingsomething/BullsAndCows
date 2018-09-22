@@ -10,12 +10,14 @@
 #include <string>
 #include "FBullCowGame.hpp"
 
+using FText = std::string;
+
 void PrintIntro();
 void PlayGame();
-std::string GetGuess();
+FText GetGuess();
 bool AskToPlayAgain();
 
-FBullCowGame BCGame; // instantiante a new game
+FBullCowGame BCGame; // instantiate a new game
 
 // the entry point for the application
 int main()
@@ -43,11 +45,11 @@ void PrintIntro()
 }
 
 // get a guess from the player
-std::string GetGuess()
+FText GetGuess()
 {
 	int CurrentTry = BCGame.GetCurrentTry();
 	
-	std::string Guess = "";
+	FText Guess = "";
 	std::cout << "Try " << CurrentTry << ". Enter your guess: ";
 	std::getline(std::cin, Guess);
 	
@@ -60,12 +62,12 @@ void PlayGame()
 	BCGame.Reset();
 	int MaxTries = BCGame.GetMaxTries();
 	
-	// TODO change the for to while loop
+	// TODO change the for to while loop once we are validating tries
 	for (int count = 0; count < MaxTries; count += 1) {
-		std::string Guess = GetGuess(); // TODO Make loop checking valid guesses
+		FText Guess = GetGuess(); // TODO make loop checking valid guesses
 		
-		// Submit valid guess to the game
-		// Print number of bulls and cows
+		// submit valid guess to the game
+		// print number of bulls and cows
 		std::cout << "Your guess was: " << Guess << "\n";
 		std::cout << std::endl;
 	}
@@ -76,7 +78,7 @@ void PlayGame()
 bool AskToPlayAgain()
 {
 	std::cout << "Do you want to play again (y/n)? ";
-	std::string Answer = "";
+	FText Answer = "";
 	std::getline(std::cin, Answer);
 	std::cout << std::endl;
 	
