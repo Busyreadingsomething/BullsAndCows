@@ -54,7 +54,8 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
                 if (i == j) {
                     // increment bulls
                     BullCowCount.Bulls++;
-                } else {
+                }
+                else {
                 // if they are not
                     // increment cows
                     BullCowCount.Cows++;
