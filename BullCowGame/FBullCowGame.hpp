@@ -28,6 +28,7 @@ public:
     
     int32 GetMaxTries() const;
     int32 GetCurrentTry() const;
+    FString GetMyHiddenWord() const;
     bool IsGameWon() const;
     
     void Reset(); // TODO make a more rich return value.

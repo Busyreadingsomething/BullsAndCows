@@ -65,6 +65,12 @@ FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
     return BullCowCount;
 }
 
+FString FBullCowGame::GetMyHiddenWord() const
+{
+    return MyHiddenWord;
+}
+
+
 
 
 
