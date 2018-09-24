@@ -18,12 +18,15 @@ void FBullCowGame::Reset()
     constexpr int MAX_TRIES = 8;
     MyMaxTries = MAX_TRIES;
     
+    const FString HIDDEN_WORD = "planet";
+    MyHiddenWord = HIDDEN_WORD;
+    
     MyCurrentTry = 1;
     return;
 }
 
 bool FBullCowGame::IsGameWon() const
-{ 
+{
     return false;
 }
 
@@ -31,6 +34,19 @@ bool FBullCowGame::CheckGuessValidity(FString)
 {
     return true;
 }
+
+// receives a valid guess, increments turn, and returns count
+BullCowCount FBullCowGame::SubmitGuess(FString)
+{
+    // increments the turn
+    MyCurrentTry++;
+    // set up a return variable
+    BullCowCount BullCowCount;
+    // loop through all the letters in the guess
+        // compare the letter against the hidden word
+    return BullCowCount;
+}
+
 
 
 
