@@ -31,11 +31,11 @@ void FBullCowGame::Reset()
 
 EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 {
-    if (false) // if isn't an isogram
+    if (false) // if isn't an isogram TODO write method to determine if isogram
     {
         return EGuessStatus::Not_Isogram;
     }
-    else if (false) // if the guess isn't all lowercase
+    else if (false) // if the guess isn't all lowercase TODO write method to determine if all lowercase
     {
         return EGuessStatus::Not_Lowercase;
     }
