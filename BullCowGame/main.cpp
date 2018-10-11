@@ -70,7 +70,7 @@ void PlayGame()
 				break;
 		}
 		// submit valid guess to the game, and receive counts
-		FBullCowCount BullCowCount = BCGame.SubmitGuess(Guess);
+		FBullCowCount BullCowCount = BCGame.SubmitValidGuess(Guess);
 		// print number of bulls and cows
 		std::cout << "Bulls = " << BullCowCount.Bulls << std::endl;
 		std::cout << "Cows = " << BullCowCount.Cows << "\n\n";
@@ -103,6 +103,8 @@ FText GetValidGuess()
 				break;
 			case EGuessStatus::Not_Isogram:
 				std::cout << "Please enter a word without repeating letters.\n";
+				break;
+			default:
 				break;
 		}
 		std::cout << std::endl;

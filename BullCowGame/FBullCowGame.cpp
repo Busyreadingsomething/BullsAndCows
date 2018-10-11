@@ -51,29 +51,21 @@ EGuessStatus FBullCowGame::CheckGuessValidity(FString Guess) const
 }
 
 // receives a valid guess, increments turn, and returns count
-FBullCowCount FBullCowGame::SubmitGuess(FString Guess)
+FBullCowCount FBullCowGame::SubmitValidGuess(FString Guess)
 {
-    // increments the turn
     MyCurrentTry++;
-    // set up a return variable
     FBullCowCount BullCowCount;
+    int32 WordLength = GetHiddenWordLength(); // assuming the same length as guess
     
-    // loop through all the letters in the guess
-    int32 HiddenWordLength = GetHiddenWordLength();
-    for (int32 MHWChar = 0; MHWChar < HiddenWordLength; MHWChar++)
+    for (int32 MHWChar = 0; MHWChar < WordLength; MHWChar++) // loop through all the letters in the hidden word
     {
-        // compare the letter against the hidden word
-        for (int32 GChar = 0; GChar < HiddenWordLength; GChar++)
+        for (int32 GChar = 0; GChar < WordLength; GChar++) // compare the letter against the guess
         {
-            // if they match then
-            if (MyHiddenWord[MHWChar] == Guess[GChar]) {
-                // if they are in the same place
-                if (MHWChar == GChar) {
-                    // increment bulls
+            if (MyHiddenWord[MHWChar] == Guess[GChar]) { // if they match then
+                if (MHWChar == GChar) { // if they are in the same place
                     BullCowCount.Bulls++;
                 }
-                else {
-                // if they are not
+                else { // if they are not
                     // increment cows
                     BullCowCount.Cows++;
                 }

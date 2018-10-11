@@ -42,7 +42,7 @@ public:
     bool IsGameWon() const;
     
     void Reset(); // TODO make a more rich return value.
-    FBullCowCount SubmitGuess(FString);
+    FBullCowCount SubmitValidGuess(FString);
 
 
 // ^^ PLEASE TRY AND IGNORE THIS AND FOCUS ON THE INTERFACE ABOVE ^^
