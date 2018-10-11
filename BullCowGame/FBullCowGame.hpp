@@ -27,7 +27,8 @@ enum class EGuessStatus
     OK,
     Not_Isogram,
     Wrong_Length,
-    Not_Lowercase
+    Not_Lowercase,
+    Invalid_Status
 };
 
 class FBullCowGame {
